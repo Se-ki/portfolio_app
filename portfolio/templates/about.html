@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> About | Koji Ichikawa</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" /> {% comment %}https://fonts.google.com/specimen/Kumbh+Sans{% endcomment %}
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}" /> {% comment %}https://fontawesome.com/{% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" /> {% comment %}https://dimsemenov.com/plugins/magnific-popup/{% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" /> {% comment %}https://getbootstrap.com/{% endcomment %}
+    <link rel="stylesheet" href="{% static 'slick/slick.min.css' %}" /> {% comment %}https://kenwheeler.github.io/slick/{% endcomment %}
+    <link rel="stylesheet" href="{% static 'slick/slick-theme.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/templatemo-upright.css' %}" />
+
+<style>
+        .tm-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; 
+            position: relative;
+        }
+        .position-fixed {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .stylist-info {
+            font-family: 'Kumbh Sans', sans-serif;
+            font-size: 60px !important; 
+            text-align: center;
+        }
+        .stylist-info p {
+            margin-bottom: 50px; 
+        }
+        .tm-text-container p {
+        font-size: 24px; 
+        }
+        body {
+        background-color: #000000; 
+        }
+        #tm-sidebar {
+        background-color: #000000; 
+        }
+        .tm-btn-get-in-touch {
+        display: inline-block;
+        padding: 10px 20px;
+        border: 2px solid #ffffff;
+        border-radius: 20px;
+        color: #ffffff;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+            }
+        .tm-btn-get-in-touch:hover {
+        background-color: #ffffff;
+        color: #333333;
+        }
+    </style>
+</head>
+
+<body>    
+    <div class="container-fluid">
+      <div class="container-fluid">
+        <p style="font-weight: bold; color: #ffffff; font-size: 40px; text-align: right;">
+            About
+        </p>
+        <hr>
+      </div>
+        <div class="row">
+
+            <!-- Leftside bar -->
+            {% include "layouts/sidebar.html" %}
+            
+            <div class="tm-main">
+                
+
+<!-- About section -->
+<div class="tm-section-wrap">
+  <div class="tm-parallax" data-parallax="scroll" data-image-src="{% static 'img/ceo.jpg' %} "></div> 
+    <section id="about" class="tm-section">
+    <div class="col-12 col-md-8">
+                <p>
+                    Koji Ichikawa is a New York-based Hair Stylist. He began his career in hairdressing at a hair salon when he was 18 years old. After 9 years, he moved to London to pursue a career in session styling in 2006. He served as the first assistant to the legendary hair stylist SAM MCKNIGHT for over 3 years, collaborating on editorials, major campaigns, and shows.
+                </p>
+                <p>
+                    After assisting SAM MCKNIGHT, he started building his own portfolio as a session stylist. His work can be seen in publications such as VOGUE, HARPER’S BAZZAR, ELLE, NUMERO, L’OFFICIEL, MADAME FIGARO, NYLON, WWD, GQ, and SHOWstudio.
+                </p>
+                <p>
+                    He has also worked with numerous celebrities including Lady Gaga, Amanda Seyfried, Arden Cho, Little Mix, Dean Caten, Dan Caten, Silvia Damiani, Steven Tyler, Ashanti, Charice, Russell Watson, Cody Fern, and Jared Leto.
+                </p>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<!-- info section -->
+{% include "layouts/footer.html" %}
+  <!-- end info_section -->
+
+
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script> {% comment %}https://jquery.com/{% endcomment %}
+  <script src="{% static 'js/jquery.singlePageNav.min.js' %}"></script> {% comment %}https://github.com/ChrisWojcik/single-page-nav{% endcomment %}
+  <script src="{% static 'js/parallax/parallax.min.js' %}"></script> {% comment %}https://pixelcog.github.io/parallax.js/{% endcomment %}
+  <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script> {% comment %}https://imagesloaded.desandro.com/{% endcomment %}
+  <script src="{% static 'js/isotope.pkgd.min.js' %}"></script> {% comment %}https://isotope.metafizzy.co/{% endcomment %}
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script> {% comment %}https://dimsemenov.com/plugins/magnific-popup/{% endcomment %}
+  <script src="{% static 'slick/slick.min.js' %}"></script> {% comment %}https://kenwheeler.github.io/slick/{% endcomment %}
+  <script src="{% static 'js/templatemo-script.js' %}"></script>
+
+</body>
+</html>

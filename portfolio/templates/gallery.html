@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Gallery | Koji Ichikawa</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" /> {% comment %}https://fonts.google.com/specimen/Kumbh+Sans{% endcomment %}
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}" /> {% comment %}https://fontawesome.com/{% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" /> {% comment %}https://dimsemenov.com/plugins/magnific-popup/{% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" /> {% comment %}https://getbootstrap.com/{% endcomment %}
+    <link rel="stylesheet" href="{% static 'slick/slick.min.css' %}" /> {% comment %}https://kenwheeler.github.io/slick/{% endcomment %}
+    <link rel="stylesheet" href="{% static 'slick/slick-theme.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/templatemo-upright.css' %}" />
+    <style>
+               
+        .stylist-info {
+            font-family: 'Kumbh Sans', sans-serif;
+            font-size: 60px !important; 
+            text-align: center;
+        }
+        .stylist-info p {
+            margin-bottom: 50px; 
+        }
+        .tm-text-container p {
+            font-size: 24px; 
+        }
+        body {
+            background-color: #000000; 
+        }
+        #tm-sidebar {
+            background-color: #000000; 
+        }
+        .tm-btn-get-in-touch {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #ffffff;
+            border-radius: 20px;
+            color: #ffffff;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .tm-btn-get-in-touch:hover {
+            background-color: #ffffff;
+            color: #333333;
+        }
+        
+    
+</style>
+
+
+</head>
+
+<body>    
+    <div class="container-fluid">
+      <div>
+        <p style="font-weight: bold; color: #ffffff; font-size: 40px; text-align: right;">
+            Koji Ichikawa's Portfolio
+        </p>
+        <hr>
+      </div>
+        <div class="row">
+
+            <!-- Leftside bar -->
+            {% include "layouts/sidebar.html" %}
+            <div class="tm-main">
+                
+
+<!-- Gallery section -->
+<div class="tm-section-wrap">
+    <div class="tm-parallax" data-parallax="scroll" data-image-src="https://static.wixstatic.com/media/9ab6c1_61ecb23247c045e48afc13a694cee749~mv2.jpg/v1/fill/w_511,h_695,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9ab6c1_61ecb23247c045e48afc13a694cee749~mv2.jpg"></div>                   
+    <section id="tm-gallery-item" class="tm-section">
+        <h2 class="tm-text-primary">Koji's Work of Art</h2>
+        <hr class="mb-5">
+        <ul class="tm-gallery-links">
+            
+            <li>
+                <a href="javascript:void(0);" class="tm-gallery-link" data-filter="advertisement">
+                    <i class="fas fa-layer-group tm-gallery-link-icon"></i>
+                    Advertising
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" class="tm-gallery-link" data-filter="editorial">
+                    <i class="fas fa-layer-group tm-gallery-link-icon"></i>
+                    Editorial
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" class="tm-gallery-link" data-filter="mg">
+                    <i class="fas fa-layer-group tm-gallery-link-icon"></i>
+                    Men's Grooming
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" class="tm-gallery-link" data-filter="rs">
+                    <i class="fas fa-layer-group tm-gallery-link-icon"></i>
+                    Runway Show
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" class="tm-gallery-link" data-filter="ws">
+                    <i class="fas fa-layer-group tm-gallery-link-icon"></i>
+                    Projects
+                </a>
+            </li>
+        </ul>
+        
+        <div class="tm-gallery">
+            {% for g in gallery %}
+            <figure class="effect-honey tm-gallery-item {{g.type}} 1">
+                <img src="{{g.img.url}}" alt="Image"/>
+                <figcaption>
+                    <h2><i>{{g.title}}</i></h2>
+                    <a href="{{g.img.url}}">View more</a>						
+                </figcaption>			
+            </figure> 
+            {% endfor %}
+        </div>
+        
+        </div> 
+
+    </section>
+</div>
+
+
+<!-- info section -->
+{% include "layouts/footer.html" %}
+  <!-- end info_section -->
+
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script> {% comment %}https://jquery.com/{% endcomment %}
+  <script src="{% static 'js/jquery.singlePageNav.min.js' %}"></script> {% comment %}https://github.com/ChrisWojcik/single-page-nav{% endcomment %}
+  <script src="{% static 'js/parallax/parallax.min.js' %}"></script> {% comment %}https://pixelcog.github.io/parallax.js/{% endcomment %}
+  <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script> {% comment %}https://imagesloaded.desandro.com/{% endcomment %}
+  <script src="{% static 'js/isotope.pkgd.min.js' %}"></script> {% comment %}https://isotope.metafizzy.co/{% endcomment %}
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script> {% comment %}https://dimsemenov.com/plugins/magnific-popup/{% endcomment %}
+  <script src="{% static 'slick/slick.min.js' %}"></script> {% comment %}https://kenwheeler.github.io/slick/{% endcomment %}
+  <script src="{% static 'js/templatemo-script.js' %}"></script>
+
+</body>
+</html>

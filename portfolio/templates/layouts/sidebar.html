@@ -1,0 +1,26 @@
+{% load static %}
+<div id="tm-sidebar" class="tm-sidebar">
+  <nav class="tm-nav">
+    <button class="navbar-toggler" type="button" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+    <div>
+      <div class="tm-brand-box">
+        <img src="{% static 'img/koji.png' %}" alt="Koji Logo" class="tm-logo" style="width: 150px; height: auto; display: block" />
+      </div>
+
+      <ul id="tm-main-nav">
+        <li class="nav-item">
+          <a href="{% url 'home' %}" class="nav-link {% if request.path == '/' %}{{ 'current' }}{% endif %}"><div class="triangle-right"></div>Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'gallery' %}" class="nav-link {% if request.path == '/gallery/' %}{{ 'current' }}{% endif %}"><div class="triangle-right"></div>Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'about' %}" class="nav-link {% if request.path == '/about/' %}{{ 'current' }}{% endif %}"><div class="triangle-right"></div>About</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'contact' %}" class="nav-link {% if request.path == '/contact/' %}{{ 'current' }}{% endif %}"><div class="triangle-right"></div>Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>

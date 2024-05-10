@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Contact | Koji Ichikawa</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" /> {% comment %}https://fonts.google.com/specimen/Kumbh+Sans{% endcomment %}
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}" /> {% comment %}https://fontawesome.com/{% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" /> {% comment %}https://dimsemenov.com/plugins/magnific-popup/{% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" /> {% comment %}https://getbootstrap.com/{% endcomment %}
+    <link rel="stylesheet" href="{% static 'slick/slick.min.css' %}" /> {% comment %}https://kenwheeler.github.io/slick/{% endcomment %}
+    <link rel="stylesheet" href="{% static 'slick/slick-theme.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/templatemo-upright.css' %}" />
+
+    <style>
+        .tm-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .position-fixed {
+            position: relative;
+            top: 20px;
+            right: 20px;
+        }
+        .stylist-info {
+            font-family: 'Kumbh Sans', sans-serif;
+            font-size: 60px !important; 
+            text-align: center;
+        }
+        .stylist-info p {
+            margin-bottom: 50px; 
+        }
+        .tm-text-container p {
+            font-size: 24px; 
+        }
+        body {
+            background-color: #000000; 
+        }
+        #tm-sidebar {
+            background-color: #000000; 
+        }
+        .tm-btn-get-in-touch {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #ffffff;
+            border-radius: 20px;
+            color: #ffffff;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .tm-btn-get-in-touch:hover {
+            background-color: #ffffff;
+            color: #333333;
+        }
+        
+        .center-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 100px; 
+        }
+        .tm-contact-col-l {
+            max-width: 100%; 
+        }
+        
+        .form-control {
+            height: 70px; 
+            font-size: 18px; 
+        }
+        textarea.form-control {
+            height: 150px; 
+        }
+</style>
+
+
+</head>
+
+<body>    
+    <div class="container-fluid">
+      <div>
+        <p style="font-weight: bold; color: #ffffff; font-size: 40px; text-align: right;">
+            Contact
+        </p>
+        <hr>
+      </div>
+        <div class="row">
+
+            <!-- Leftside bar -->
+            {% include "layouts/sidebar.html" %}
+            
+            <div class="tm-main">
+                
+
+<!-- Contact section -->
+<div class="tm-section-wrap">
+    <div class="tm-parallax" data-parallax="scroll" data-image-src="{% static 'img/contact.jpg' %} "></div> 
+    <div id="contact" class="tm-section">
+        <hr class="mb-5">
+        <div class="row justify-content-center"> 
+            <div class="col-xl-4 tm-contact-col-l mb-6">
+                <form id="contact-form" action="" method="POST" class="tm-contact-form">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control rounded-0" placeholder="Name" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control rounded-0" placeholder="Email" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="contact_number" class="form-control rounded-0" placeholder="Contact Number" required />
+                    </div> <!-- New form group for contact number -->
+                    <div class="form-group">
+                        <select class="form-control" id="contact-select" name="inquiry">
+                            <option value="Editorial">Editorial</option>
+                            <option value="Advertising">Advertising</option>
+                            <option value="Runway Show">Runway Show</option>
+                            <option value="Wig Styling">Wig Styling</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="8" name="message" class="form-control rounded-0" placeholder="Message" required></textarea>
+                    </div>
+
+                    <div class="form-group tm-text-right">
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xl-6 tm-contact-col-r">
+                <!-- Map -->
+                <div class="mapouter mb-4">
+                    <div class="gmap_canvas">
+                        <iframe width="100%" height="520" id="gmap_canvas"
+                        src="https://www.google.com/maps?q=1430+Broadway+Suite+601+New+York+NY+10018&z=13&output=embed"
+                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                        </iframe> 
+                    </div>
+                </div>
+
+                <!-- Address -->
+                <address class="mb-4">
+                    1430 Broadway, Suite 601<br>
+                    New York, NY 10018<br>
+                    Office: 212.315.5505
+                </address>
+
+                <!-- Links -->
+                <ul class="tm-contact-links mb-4">
+                    <li class="mb-2">
+                        <a href="tel:+12123155505">
+                            <i class="fas fa-phone mr-2 tm-contact-link-icon"></i>
+                            Tel: +1(212) 315-5505
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:info@distinctartists.com">
+                            <i class="fas fa-at mr-2 tm-contact-link-icon"></i>
+                            Email: fran@distinctartists.com
+                        </a>
+                    </li>
+                </ul>
+                
+                <ul class="tm-contact-social">
+                    <li><a href="https://www.facebook.com/profile.php?id=100065011684114" class="tm-social-link"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="https://twitter.com/KojiIchikawa1" class="tm-social-link"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/hair_by_koji_ichikawa" class="tm-social-link"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCnt_uRSPua8c3-KGZQn06Og" class="tm-social-link"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- info section -->
+{% include "layouts/footer.html" %}
+  <!-- end info_section -->
+
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script> {% comment %}https://jquery.com/{% endcomment %}
+  <script src="{% static 'js/jquery.singlePageNav.min.js' %}"></script> {% comment %}https://github.com/ChrisWojcik/single-page-nav{% endcomment %}
+  <script src="{% static 'js/parallax/parallax.min.js' %}"></script> {% comment %}https://pixelcog.github.io/parallax.js/{% endcomment %}
+  <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script> {% comment %}https://imagesloaded.desandro.com/{% endcomment %}
+  <script src="{% static 'js/isotope.pkgd.min.js' %}"></script> {% comment %}https://isotope.metafizzy.co/{% endcomment %}
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script> {% comment %}https://dimsemenov.com/plugins/magnific-popup/{% endcomment %}
+  <script src="{% static 'slick/slick.min.js' %}"></script> {% comment %}https://kenwheeler.github.io/slick/{% endcomment %}
+  <script src="{% static 'js/templatemo-script.js' %}"></script>
+
+</body>
+</html>
