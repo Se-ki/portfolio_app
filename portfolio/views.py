@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Gallery, Contact
+from django.http import JsonResponse
+import json
 
 # Create your views here.
 
@@ -20,13 +22,14 @@ def gallery(request):
 
 def contact(request):
     if request.method == "POST":
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        contact_number = request.POST.get('contact_number')
-        inquiry = request.POST.get('inquiry')
-        message = request.POST.get('message')
+        data = json.load(request)
+        name = data.get('name')
+        email = data.get('email')
+        contact_number = data.get('contactNumber')
+        inquiry = data.get('inquiry')
+        message = data.get('message')
         contact = Contact(name=name, email=email, contact_number=contact_number, inquiry=inquiry, message=message)
         contact.save()
-        return redirect('contact')
+        return JsonResponse({'response': 'Success'})
     
     return render(request, 'contact.html')
